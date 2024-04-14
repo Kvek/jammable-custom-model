@@ -1,0 +1,1 @@
+node git_hooks/branch-lint.config.js
