@@ -19,10 +19,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
   <html suppressHydrationWarning lang="en">
     <body className={cn("relative antialiased", notoSans.className)}>
-      <ThemeProvider
-        disableTransitionOnChange
-        attribute="class"
-        defaultTheme="dark">
+      <ThemeProvider disableTransitionOnChange attribute="class">
         {children}
       </ThemeProvider>
     </body>
