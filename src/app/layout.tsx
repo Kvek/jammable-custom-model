@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { Noto_Sans as NotoSans } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { ThemeProvider } from "@providers/ThemeProvider";
+
+import { cn } from "@lib/utils";
+
 const notoSans = NotoSans({
   subsets: ["latin"],
 });
@@ -13,8 +17,15 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
-  <html suppressHydrationWarning className="h-full" lang="en">
-    <body className={notoSans.className}>{children}</body>
+  <html suppressHydrationWarning lang="en">
+    <body className={cn("relative antialiased", notoSans.className)}>
+      <ThemeProvider
+        disableTransitionOnChange
+        attribute="class"
+        defaultTheme="dark">
+        {children}
+      </ThemeProvider>
+    </body>
   </html>
 );
 
