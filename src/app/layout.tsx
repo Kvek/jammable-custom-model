@@ -5,6 +5,8 @@ import type { ReactNode } from "react";
 
 import { ThemeProvider } from "@providers/ThemeProvider";
 
+import { Navbar } from "@wrappers";
+
 import { cn } from "@lib/utils";
 
 const notoSans = NotoSans({
@@ -18,9 +20,10 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
   <html suppressHydrationWarning lang="en">
-    <body className={cn("relative antialiased", notoSans.className)}>
+    <body className={cn("antialiased", notoSans.className)}>
       <ThemeProvider disableTransitionOnChange attribute="class">
-        {children}
+        <Navbar />
+        <div className="min-h-content p-4">{children}</div>
       </ThemeProvider>
     </body>
   </html>

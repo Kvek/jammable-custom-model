@@ -62,6 +62,9 @@ const config = {
           foreground: "hsl(var(--secondary-foreground))",
         },
       },
+      height: {
+        navbar: "var(--navbar)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -71,6 +74,9 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+      },
+      minHeight: {
+        content: "calc(100dvh - (var(--navbar) + 32px))",
       },
     },
   },
