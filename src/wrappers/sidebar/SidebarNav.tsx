@@ -14,7 +14,9 @@ const SidebarNav = (): JSX.Element => (
       </h1>
 
       <Button
-        className="flex items-center space-x-1 bg-gradient-to-r from-button-pink to-button-purple p-1.5 opacity-95 hover:opacity-100"
+        aria-label="voice upload button"
+        className="flex items-center space-x-1 bg-gradient-to-r from-button-pink to-button-purple px-2 py-2 text-sm font-normal leading-3 opacity-95 hover:opacity-100"
+        id="upload-button"
         size={"shell"}
         variant={"shell"}>
         <PlusIcon height={15} strokeWidth={3} width={15} />

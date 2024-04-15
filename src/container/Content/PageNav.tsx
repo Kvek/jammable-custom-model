@@ -13,7 +13,7 @@ const PageNav = (): JSX.Element => {
     <div className="flex h-16 w-full items-center justify-between p-4">
       <NavButtons />
 
-      <span className="text-currentpath text-lg font-semibold capitalize">
+      <span className="text-base font-medium capitalize text-currentpath">
         {pathNameExtractor(pathname)}
       </span>
     </div>

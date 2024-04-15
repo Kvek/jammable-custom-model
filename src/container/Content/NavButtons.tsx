@@ -10,7 +10,9 @@ export const NavButtons = (): JSX.Element => {
   return (
     <div className="flex space-x-4">
       <Button
+        aria-label="page navigation back button"
         className="rounded-full"
+        id="page-navigation-back-button"
         onClick={() => {
           router.back();
         }}
@@ -20,7 +22,9 @@ export const NavButtons = (): JSX.Element => {
       </Button>
 
       <Button
+        aria-label="page navigation forward button"
         className="rounded-full"
+        id="page-navigation-forward-button"
         onClick={() => {
           router.forward();
         }}
