@@ -1,5 +1,6 @@
 {
   "bracketSameLine": true,
   "plugins": ["prettier-plugin-tailwindcss"],
+  "printWidth": 120,
   "tailwindFunctions": ["clsx", "cva", "cn"]
 }

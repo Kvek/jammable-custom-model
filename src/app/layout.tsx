@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
-import { Navbar, Sidebar } from "@wrappers";
+import { Navbar, Sidebar, UploadDrawer } from "@wrappers";
 
 import { Content } from "@container";
 import { cn } from "@lib/utils";
@@ -31,6 +31,8 @@ const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
             <Sidebar />
             <Content>{children}</Content>
           </div>
+
+          <UploadDrawer />
         </ThemeProvider>
       </ReduxProvider>
     </body>

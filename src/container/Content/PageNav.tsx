@@ -39,7 +39,7 @@ const PageNav = (): JSX.Element => {
         </Button>
       </div>
 
-      <span className="text-base font-medium capitalize text-currentpath">
+      <span className="text-base font-medium capitalize text-currentpath opacity-95">
         {pathNameExtractor(pathname)}
       </span>
     </div>
