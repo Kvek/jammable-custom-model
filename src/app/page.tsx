@@ -1,6 +1,7 @@
 import type { FC } from "react";
-import React from "react";
 
-const page: FC = () => <div>Home</div>;
+import { Content } from "@container";
+
+const page: FC = () => <Content />;
 
 export default page;

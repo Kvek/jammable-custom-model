@@ -22,9 +22,14 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundColor: {
+        primary: "hsl(var(--foreground) / 10%)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
+        primary: "10px",
+        secondary: "6px",
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
