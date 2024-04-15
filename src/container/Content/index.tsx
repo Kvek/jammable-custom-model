@@ -1,12 +1,8 @@
-import type { FC } from "react";
+import type { WrapperComponentType } from "@types";
 
-import ContentColumn from "./ContentColumn";
-import NavColumn from "./NavColumn";
-
-const Content: FC = () => (
-  <div className="min-h-content flex h-full w-full md:space-x-4">
-    <NavColumn />
-    <ContentColumn />
+const Content: WrapperComponentType = ({ children }) => (
+  <div className="min-h-content rounded-primary h-full w-full bg-primary">
+    {children}
   </div>
 );
 

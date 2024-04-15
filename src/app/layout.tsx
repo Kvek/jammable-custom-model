@@ -5,8 +5,9 @@ import type { ReactNode } from "react";
 
 import { ThemeProvider } from "@providers/ThemeProvider";
 
-import { Navbar } from "@wrappers";
+import { Navbar, Sidebar } from "@wrappers";
 
+import { Content } from "@container";
 import { cn } from "@lib/utils";
 
 const notoSans = NotoSans({
@@ -23,7 +24,10 @@ const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
     <body className={cn("antialiased", notoSans.className)}>
       <ThemeProvider disableTransitionOnChange attribute="class">
         <Navbar />
-        <div className="min-h-content p-4">{children}</div>
+        <div className="min-h-content flex space-x-4 p-4">
+          <Sidebar />
+          <Content>{children}</Content>
+        </div>
       </ThemeProvider>
     </body>
   </html>
