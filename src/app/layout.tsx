@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Noto_Sans as NotoSans } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
 import { Navbar, Sidebar } from "@wrappers";
@@ -22,13 +23,16 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
   <html suppressHydrationWarning lang="en">
     <body className={cn("antialiased", notoSans.className)}>
-      <ThemeProvider disableTransitionOnChange attribute="class">
-        <Navbar />
-        <div className="mt-y-pad p-4">
-          <Sidebar />
-          <Content>{children}</Content>
-        </div>
-      </ThemeProvider>
+      <ReduxProvider>
+        <ThemeProvider disableTransitionOnChange attribute="class">
+          <Navbar />
+
+          <div className="mt-y-pad p-4">
+            <Sidebar />
+            <Content>{children}</Content>
+          </div>
+        </ThemeProvider>
+      </ReduxProvider>
     </body>
   </html>
 );

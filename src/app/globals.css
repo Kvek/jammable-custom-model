@@ -38,6 +38,7 @@
     --sidebar: 25rem;
 
     --content: calc(100dvh - (var(--navbar) + 32px));
+    --drawer: calc(100dvh - (var(--navbar) + 16px));
 
     --pink: 323 80 80;
 
