@@ -79,6 +79,7 @@ const config = {
       },
       height: {
         content: "var(--content)",
+        drawer: "var(--drawer)",
         navbar: "var(--navbar)",
       },
       keyframes: {
