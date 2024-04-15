@@ -43,6 +43,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        currentpath: "hsl(var(--pink))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -68,6 +69,7 @@ const config = {
         },
       },
       height: {
+        content: "var(--content)",
         navbar: "var(--navbar)",
       },
       keyframes: {
@@ -80,8 +82,18 @@ const config = {
           to: { height: "0" },
         },
       },
+      margin: {
+        "x-pad": "calc(var(--sidebar) + 16px)",
+        "y-pad": "calc(var(--navbar))",
+      },
+      maxHeight: {
+        content: "var(--content)",
+      },
       minHeight: {
-        content: "calc(100dvh - (var(--navbar) + 32px))",
+        content: "var(--content)",
+      },
+      width: {
+        sidebar: "var(--sidebar)",
       },
     },
   },

@@ -1,9 +1,7 @@
 import type { WrapperComponentType } from "@types";
 
 const Content: WrapperComponentType = ({ children }) => (
-  <div className="min-h-content rounded-primary h-full w-full bg-primary">
-    {children}
-  </div>
+  <div className="h-full overflow-scroll">{children}</div>
 );
 
 export default Content;

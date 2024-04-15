@@ -1,3 +1,4 @@
 import Content from "./Content";
+import PageNav from "./Content/PageNav";
 
-export { Content };
+export { Content, PageNav };
