@@ -7,7 +7,7 @@ import { ThemeProvider } from "@providers/ThemeProvider";
 
 import { Navbar, Sidebar } from "@wrappers";
 
-import { Content, PageNav } from "@container";
+import { Content } from "@container";
 import { cn } from "@lib/utils";
 
 const notoSans = NotoSans({
@@ -26,10 +26,7 @@ const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
         <Navbar />
         <div className="mt-y-pad p-4">
           <Sidebar />
-          <div className="rounded-primary ml-x-pad h-content overflow-hidden bg-primary">
-            <PageNav />
-            <Content>{children}</Content>
-          </div>
+          <Content>{children}</Content>
         </div>
       </ThemeProvider>
     </body>
