@@ -23,7 +23,12 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundColor: {
-        primary: "hsl(var(--foreground) / 10%)",
+        primary: "hsl(var(--foreground) / 7%)",
+        rainbow:
+          "linear-gradient(90deg,#44ff9a -.55%,#44b0ff 22.86%,#8b44ff 48.36%,#f64 73.33%,#ebff70 99.34%)",
+      },
+      borderColor: {
+        primary: "hsl(var(--foreground) / 7%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -39,6 +44,10 @@ const config = {
         },
         background: "hsl(var(--background))",
         border: "hsl(var(--border))",
+        button: {
+          pink: "hsl(var(--button-pink))",
+          purple: "hsl(var(--button-purple))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

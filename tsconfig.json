@@ -35,11 +35,11 @@
     ".next/types/**/*.ts",
     ".eslintrc.cjs",
     "vitest.config.ts",
-    "next.config.js",
     "git_hooks/branch-lint.config.js",
     "git_hooks/commit-lint.config.js",
     "git_hooks/staged-lint.config.js",
     "tailwind.config.ts",
-    "postcss.config.js"
+    "postcss.config.js",
+    "next.config.mjs"
   ]
 }

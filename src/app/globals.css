@@ -40,6 +40,9 @@
     --content: calc(100dvh - (var(--navbar) + 32px));
 
     --pink: 323 80 80;
+
+    --button-pink: 329 86 70;
+    --button-purple: 272 72 47;
   }
 }
 

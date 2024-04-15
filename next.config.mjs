@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-      devIndicators: {
+  devIndicators: {
     buildActivityPosition: "bottom-right",
   },
   experimental: {
     typedRoutes: true,
   },
   generateBuildId: process.env.GIT_HASH,
+  async redirects() {
+    return [{ destination: "/my-voice", permanent: true, source: "/" }];
+  },
 };
 
 export default nextConfig;
