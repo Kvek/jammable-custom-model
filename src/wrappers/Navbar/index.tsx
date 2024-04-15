@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@components/ui/avatar";
 import { BellIcon } from "@radix-ui/react-icons";
 
 const Navbar: FC = () => (
-  <div className="h-navbar flex items-center justify-between px-4">
+  <div className="h-navbar fixed top-0 z-10 flex w-full items-center justify-between px-4">
     <div id="logo">
       <Image alt="logo" height={28} src="/logo.svg" width={28} />
     </div>
