@@ -8,7 +8,7 @@ import { BellIcon } from "@radix-ui/react-icons";
 const Navbar: FC = () => (
   <div className="fixed top-0 z-10 flex h-navbar w-full items-center justify-between px-4">
     <div id="logo">
-      <Image alt="logo" height={28} src="/logo.svg" width={28} />
+      <Image priority alt="logo" height={28} src="/logo.svg" width={28} />
     </div>
 
     <div className="flex items-center space-x-4" id="nav-content">

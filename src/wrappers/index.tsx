@@ -1,5 +1,6 @@
 import UploadDrawer from "./drawer";
+import Loader from "./loader";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 
-export { Navbar, Sidebar, UploadDrawer };
+export { Loader, Navbar, Sidebar, UploadDrawer };

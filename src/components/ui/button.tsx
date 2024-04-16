@@ -1,8 +1,12 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
+import type { WrapperComponentType } from "@types";
+
 import { cn } from "@lib/utils";
 import { Slot } from "@radix-ui/react-slot";
+
+import { Tooltip, TooltipArrow, TooltipContent, TooltipTrigger } from "./tooltip";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
@@ -20,7 +24,7 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md px-3 text-xs",
       },
       variant: {
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        default: "bg-primary/95 text-primary-foreground shadow hover:bg-primary/100",
         destructive: "bg-destructive/90 text-destructive-foreground shadow-sm hover:bg-destructive/100",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
@@ -46,4 +50,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropsInterface>(
 );
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+interface TooolTipButtonPropsType {
+  tooltipContent: string;
+  buttonProps?: ButtonPropsInterface;
+}
+
+const ToolTipButton: WrapperComponentType<TooolTipButtonPropsType> = ({ buttonProps, children, tooltipContent }) => (
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button {...buttonProps}>{children}</Button>
+    </TooltipTrigger>
+
+    <TooltipContent>
+      <p>{tooltipContent}</p>
+      <TooltipArrow className="fill-foreground" />
+    </TooltipContent>
+  </Tooltip>
+);
+
+export { Button, buttonVariants, ToolTipButton };

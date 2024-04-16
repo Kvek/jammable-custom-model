@@ -1,0 +1,55 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><style>
+@keyframes partialCenterScaleWave {
+    0 { transform: scaleY(1); }
+    25% { transform: scaleY(1.25); }
+    50% { transform: scaleY(.5); }
+    75% { transform: scaleY(1.25); }
+    100% { transform: scaleY(1); }
+}
+
+svg .one {
+    animation: partialCenterScaleWave 1.2s infinite;
+    animation-delay: calc(0.75s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+svg .two {
+    animation: partialCenterScaleWave 1.2s infinite;
+     animation-delay: calc(0.85s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+svg .three {
+    animation: partialCenterScaleWave 1.2s infinite;
+     animation-delay: calc(0.95s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+svg .four {
+    animation: partialCenterScaleWave 1.2s infinite;
+     animation-delay: calc(1.05s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+
+svg .five {
+    animation: partialCenterScaleWave 1.2s infinite;
+     animation-delay: calc(1.15s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+
+svg .six {
+    animation: partialCenterScaleWave 1.2s infinite;
+     animation-delay: calc(1.25s);
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+</style>
+<path class="six" d="M55.5 19.824C55.5 18.4433 54.3807 17.324 53 17.324C51.6193 17.324 50.5 18.4433 50.5 19.824H55.5ZM50.5 27.0342C50.5 28.4149 51.6193 29.5342 53 29.5342C54.3807 29.5342 55.5 28.4149 55.5 27.0342H50.5ZM50.5 19.824V27.0342H55.5V19.824H50.5Z" fill="#F5A5D7"/>
+<path class="five" d="M45.5 7.80688C45.5 6.42617 44.3807 5.30688 43 5.30688C41.6193 5.30688 40.5 6.42617 40.5 7.80688H45.5ZM40.5 39.0513C40.5 40.432 41.6193 41.5513 43 41.5513C44.3807 41.5513 45.5 40.432 45.5 39.0513H40.5ZM40.5 7.80688V39.0513H45.5V7.80688H40.5Z" fill="#F5A5D7"/>
+<path class="four" d="M35.5 15.0171C35.5 13.6364 34.3807 12.5171 33 12.5171C31.6193 12.5171 30.5 13.6364 30.5 15.0171H35.5ZM30.5 31.841C30.5 33.2217 31.6193 34.341 33 34.341C34.3807 34.341 35.5 33.2217 35.5 31.841H30.5ZM30.5 15.0171V31.841H35.5V15.0171H30.5Z" fill="#F5A5D7"/>
+<path class="three" d="M25.5 3C25.5 1.61929 24.3807 0.5 23 0.5C21.6193 0.5 20.5 1.61929 20.5 3H25.5ZM20.5 46.2615C20.5 47.6422 21.6193 48.7615 23 48.7615C24.3807 48.7615 25.5 47.6422 25.5 46.2615H20.5ZM20.5 3V46.2615H25.5V3H20.5Z" fill="#F5A5D7"/>
+<path class="two" d="M15.5 10.2102C15.5 8.82949 14.3807 7.71021 13 7.71021C11.6193 7.71021 10.5 8.82949 10.5 10.2102H15.5ZM10.5 36.6478C10.5 38.0285 11.6193 39.1478 13 39.1478C14.3807 39.1478 15.5 38.0285 15.5 36.6478H10.5ZM10.5 10.2102V36.6478H15.5V10.2102H10.5Z" fill="#F5A5D7"/>
+<path class="one" d="M5.5 19.8239C5.5 18.4431 4.38071 17.3239 3 17.3239C1.61929 17.3239 0.5 18.4431 0.5 19.8239H5.5ZM0.5 27.0341C0.5 28.4148 1.61929 29.5341 3 29.5341C4.38071 29.5341 5.5 28.4148 5.5 27.0341H0.5ZM0.5 19.8239V27.0341H5.5V19.8239H0.5Z" fill="#F5A5D7"/>
+</svg>

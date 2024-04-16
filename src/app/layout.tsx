@@ -3,10 +3,12 @@ import type { Metadata } from "next";
 import { Noto_Sans as NotoSans } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { TooltipProvider } from "@components/ui/tooltip";
+
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
-import { Navbar, Sidebar, UploadDrawer } from "@wrappers";
+import { Loader, Navbar, Sidebar, UploadDrawer } from "@wrappers";
 
 import { Content } from "@container";
 import { cn } from "@lib/utils";
@@ -25,14 +27,17 @@ const RootLayout = ({ children }: { children: ReactNode }): JSX.Element => (
     <body className={cn("antialiased", notoSans.className)}>
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange attribute="class">
-          <Navbar />
+          <TooltipProvider>
+            <Navbar />
 
-          <div className="mt-y-pad p-4">
-            <Sidebar />
-            <Content>{children}</Content>
-          </div>
+            <div className="mt-y-pad p-4">
+              <Sidebar />
+              <Content>{children}</Content>
+            </div>
+            <UploadDrawer />
 
-          <UploadDrawer />
+            <Loader />
+          </TooltipProvider>
         </ThemeProvider>
       </ReduxProvider>
     </body>

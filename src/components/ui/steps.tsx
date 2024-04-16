@@ -8,7 +8,13 @@ interface StepType {
   title: string;
 }
 
-export const Steps = ({ currentStep, steps }: { steps: StepType[]; currentStep: number }): JSX.Element => (
+export const Steps = ({
+  currentCompletedStep,
+  steps,
+}: {
+  steps: StepType[];
+  currentCompletedStep: number;
+}): JSX.Element => (
   <div className="flex w-full justify-center">
     <div className="flex h-full w-full max-w-[800px] items-center">
       {steps.map(({ complete, title }, index) => (
@@ -16,33 +22,37 @@ export const Steps = ({ currentStep, steps }: { steps: StepType[]; currentStep: 
           <div className="relative flex flex-col items-center">
             <span
               className={cn(
-                "flex h-[30px] w-[30px] items-center justify-center rounded-full border-2 border-secondary bg-none",
-                currentStep === index && "border-white/50",
-                complete && "border-none bg-green-500",
+                "flex h-[25px] w-[25px] items-center justify-center rounded-full border-2 border-secondary bg-none md:h-[30px] md:w-[30px]",
+                currentCompletedStep === index && "border-white/50",
+                complete && index < currentCompletedStep && "border-none bg-green-500",
               )}>
               <CheckIcon
-                className={cn("text-secondary", currentStep === index && "text-white/50", complete && "text-white")}
-                height={20}
-                width={20}
+                className={cn(
+                  "h-4 w-4 text-secondary md:h-5 md:w-5",
+                  currentCompletedStep === index && "text-white/50",
+                  complete && index < currentCompletedStep && "text-white",
+                )}
               />
             </span>
 
             <span
               className={cn(
-                "absolute top-[35px] font-semibold capitalize text-secondary",
-                currentStep === index && "text-white/50",
-                complete && "text-primary",
+                "absolute top-6 font-semibold capitalize text-secondary md:top-8",
+                currentCompletedStep === index && "text-white/50",
+                complete && index < currentCompletedStep && "text-primary",
               )}>
               {title}
             </span>
           </div>
 
           {steps.length - 1 > index && (
-            <div className="mx-1 flex h-[30px] w-full items-center">
+            <div className="mx-1 flex h-5 w-full items-center md:h-8">
               <hr
                 className={cn(
                   "h-[2px] w-full border-none bg-secondary bg-gradient-to-r",
-                  complete && `from-white ${currentStep > index + 1 ? "to-white" : "to-secondary"}`,
+                  complete &&
+                    index < currentCompletedStep &&
+                    `from-white ${currentCompletedStep > index + 1 ? "to-white" : "to-secondary"}`,
                 )}
               />
             </div>

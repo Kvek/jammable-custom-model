@@ -1,11 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  content: [
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   darkMode: ["class"],
   plugins: [require("tailwindcss-animate")],
   prefix: "",
@@ -24,8 +20,10 @@ const config = {
       },
       backgroundColor: {
         primary: "hsl(var(--foreground) / 7%)",
-        rainbow:
-          "linear-gradient(90deg,#44ff9a -.55%,#44b0ff 22.86%,#8b44ff 48.36%,#f64 73.33%,#ebff70 99.34%)",
+        rainbow: "linear-gradient(90deg,#44ff9a -.55%,#44b0ff 22.86%,#8b44ff 48.36%,#f64 73.33%,#ebff70 99.34%)",
+      },
+      backgroundImage: {
+        borderPattern: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='rgb(255,255,255,.5)' stroke-width='4' stroke-dasharray='10' stroke-dashoffset='10' stroke-linecap='round'/%3e%3c/svg%3e");`,
       },
       borderColor: {
         primary: "hsl(var(--foreground) / 7%)",

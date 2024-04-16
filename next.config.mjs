@@ -8,7 +8,7 @@ const nextConfig = {
   },
   generateBuildId: process.env.GIT_HASH,
   async redirects() {
-    return [{ destination: "/my-voice", permanent: true, source: "/" }];
+    return [{ destination: "/my-voices", permanent: true, source: "/" }];
   },
 };
 
