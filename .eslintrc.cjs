@@ -2,10 +2,7 @@ module.exports = {
   extends: ["eslint:recommended", "next/core-web-vitals", "prettier"],
   overrides: [
     {
-      extends: [
-        "plugin:@typescript-eslint/strict-type-checked",
-        "plugin:@typescript-eslint/stylistic-type-checked",
-      ],
+      extends: ["plugin:@typescript-eslint/strict-type-checked", "plugin:@typescript-eslint/stylistic-type-checked"],
       files: ["*.ts", "*.tsx"],
       rules: {
         "@typescript-eslint/array-type": [
@@ -54,6 +51,14 @@ module.exports = {
           {
             format: ["camelCase"],
             selector: ["function"],
+          },
+        ],
+        "@typescript-eslint/no-misused-promises": [
+          2,
+          {
+            checksVoidReturn: {
+              attributes: false,
+            },
           },
         ],
         "@typescript-eslint/no-unsafe-assignment": "error",

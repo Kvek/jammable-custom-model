@@ -12,7 +12,7 @@ const Loader = (): JSX.Element | null => {
 
   return (
     <div className="fixed left-0 top-0 z-[999] flex h-full w-full select-none items-center justify-center">
-      <div className="absolute h-full w-full bg-background/90" />
+      <div className="absolute h-full w-full bg-background" />
       <span className="z-[2]">
         <LoaderIcon />
       </span>

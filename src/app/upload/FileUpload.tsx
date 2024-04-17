@@ -1,21 +1,20 @@
+"use client";
+
 import { Trash2Icon } from "lucide-react";
 import Image from "next/image";
-import type { FC } from "react";
 import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
+
+import { updateStepsState } from "@redux/steps/slice";
+import { useAppDispatch } from "@redux/store";
 
 import { ToolTipButton } from "@components/ui/button";
 import { ScrollArea } from "@components/ui/scroll-area";
 
 import { cn } from "@lib/utils";
 
-import type { StepsInterface } from ".";
-
-interface FileUploadPropsType {
-  onFileUploadReady: (step: StepsInterface) => void;
-}
-
-export const FileUpload: FC<FileUploadPropsType> = ({ onFileUploadReady }) => {
+export const FileUpload = (): JSX.Element => {
+  const dispatch = useAppDispatch();
   const [files, setFiles] = useState<Array<{ name: string; key: string; type: string }>>([]);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -32,7 +31,7 @@ export const FileUpload: FC<FileUploadPropsType> = ({ onFileUploadReady }) => {
   };
 
   useEffect(() => {
-    onFileUploadReady({ complete: !!files.length, title: "upload" });
+    dispatch(updateStepsState({ complete: !!files.length, title: "upload" }));
   }, [files]);
 
   return (
@@ -47,7 +46,7 @@ export const FileUpload: FC<FileUploadPropsType> = ({ onFileUploadReady }) => {
             files.length ? "max-sm:max-h-[20dvh]" : "max-sm:max-h-full",
           )}>
           <div
-            className="bg-borderPattern flex h-full w-full cursor-pointer items-center justify-center rounded-primary bg-primary p-4 hover:bg-primary/10"
+            className="flex h-full w-full cursor-pointer items-center justify-center rounded-primary bg-primary bg-borderPattern p-4 hover:bg-primary/10"
             {...getRootProps({ "aria-label": "drag and drop area" })}>
             <div className="flex h-full w-full items-end justify-center bg-[url('/files.svg')] bg-center bg-no-repeat max-sm:bg-[length:40%]">
               <p className="text-foreground/60 md:py-10">Drop your dataset or click to select files</p>
