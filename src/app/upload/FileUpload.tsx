@@ -2,7 +2,7 @@
 
 import { Trash2Icon } from "lucide-react";
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 import { updateStepsState } from "@redux/steps/slice";
@@ -19,6 +19,7 @@ export const FileUpload = (): JSX.Element => {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setFiles(acceptedFiles.map(({ name, type }) => ({ key: name.concat("-").concat(type), name, type })));
+    dispatch(updateStepsState({ complete: true, title: "upload" }));
   }, []);
 
   const { getInputProps, getRootProps } = useDropzone({
@@ -28,11 +29,8 @@ export const FileUpload = (): JSX.Element => {
 
   const deleteVoiceHandler = (fKey: string): void => {
     setFiles((files) => files.filter(({ key }) => key !== fKey));
+    dispatch(updateStepsState({ complete: false, title: "upload" }));
   };
-
-  useEffect(() => {
-    dispatch(updateStepsState({ complete: !!files.length, title: "upload" }));
-  }, [files]);
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
