@@ -1,17 +1,22 @@
 "use client";
-import { type FC, useEffect } from "react";
 
-import { resetAllSteps } from "@redux/steps/slice";
-import { useAppDispatch } from "@redux/store";
+import { useEffect } from "react";
 
-const Page: FC = () => {
-  const dispatch = useAppDispatch();
+import Filter from "./Filter";
+import VoiceCards from "./VoiceCards";
 
+const Page = ({ searchParams }: { searchParams: Record<string, string[] | string | undefined> }): JSX.Element => {
   useEffect(() => {
-    dispatch(resetAllSteps());
-  }, []);
+    console.log("searchParams", searchParams);
+  }, [searchParams]);
 
-  return <div className="">my voices page</div>;
+  return (
+    <div className="h-full w-full">
+      <Filter />
+
+      <VoiceCards />
+    </div>
+  );
 };
 
 export default Page;

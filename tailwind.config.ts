@@ -20,6 +20,7 @@ const config = {
       },
       backgroundColor: {
         primary: "hsl(var(--foreground) / 7%)",
+        primaryShade: "hsl(var(--foreground) / 10%)",
         rainbow: "linear-gradient(90deg,#44ff9a -.55%,#44b0ff 22.86%,#8b44ff 48.36%,#f64 73.33%,#ebff70 99.34%)",
       },
       backgroundImage: {
@@ -50,17 +51,18 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        currentpath: "hsl(var(--pink))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+
         foreground: "hsl(var(--foreground))",
         input: "hsl(var(--input))",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
+        pink: "hsl(var(--pink))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
