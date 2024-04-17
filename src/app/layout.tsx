@@ -8,7 +8,7 @@ import { TooltipProvider } from "@components/ui/tooltip";
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
-import { Loader, Navbar } from "@wrappers";
+import { Loader, Navbar, PurchaseModal } from "@wrappers";
 
 import { cn } from "@lib/utils";
 
@@ -31,6 +31,7 @@ const RootLayout = ({ children, voice }: { children: ReactNode; voice: ReactNode
             <div className="mt-y-pad h-full p-4">{children}</div>
             <div>{voice}</div>
             <Loader />
+            <PurchaseModal />
           </TooltipProvider>
         </ThemeProvider>
       </ReduxProvider>
