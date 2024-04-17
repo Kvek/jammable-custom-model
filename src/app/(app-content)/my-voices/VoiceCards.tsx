@@ -1,5 +1,6 @@
+"use client";
+
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 import { Skeleton } from "@components/ui/skeleton";
 
@@ -8,34 +9,19 @@ import { cn } from "@lib/utils";
 const cardsList = new Array<string>(9).fill("");
 
 const VoiceCards = (): JSX.Element => {
-  const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
   const view = searchParams.get("view");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    (): void => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
-    <div className="flex w-full flex-wrap gap-2">
+    <div className="flex w-full flex-wrap gap-4">
       {cardsList.map((_, i) => (
         <div
           className={cn(
-            "flex h-full max-h-[118px] w-full max-w-[211px] rounded-sm",
-            view === "card" ? "aspect-video min-h-[40px] min-w-full" : "min-h-[108px] min-w-[192px]",
+            "flex h-[108px] max-h-[118px] w-[192px] max-w-[211px] rounded-sm",
+            view === "list" && "aspect-video h-[70px] min-w-full",
           )}
           key={i.toString()}>
-          {loading ? (
-            <Skeleton className="flex" />
-          ) : (
-            <span className="bg-primaryShade flex min-h-full min-w-full rounded-sm border" />
-          )}
+          <Skeleton className="flex rounded-sm" />
         </div>
       ))}
     </div>
