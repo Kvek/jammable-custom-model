@@ -18,11 +18,14 @@ export const FileUpload = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const [files, setFiles] = useState<Array<{ name: string; key: string; type: string }>>([]);
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFiles((f) => [...f, ...acceptedFiles.map(({ name, type }) => ({ key: uuidv4(), name, type }))]);
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      setFiles((f) => [...f, ...acceptedFiles.map(({ name, type }) => ({ key: uuidv4(), name, type }))]);
 
-    dispatch(updateStepsState({ complete: true, title: "upload" }));
-  }, []);
+      dispatch(updateStepsState({ complete: true, title: "upload" }));
+    },
+    [dispatch],
+  );
 
   const { getInputProps, getRootProps } = useDropzone({
     accept: { "audio/mp4": [".m4a"], "audio/mpeg": [".mp3"], "audio/wav": [".wav"] },

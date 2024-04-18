@@ -1,11 +1,15 @@
-import Filter from "./Filter";
-import VoiceCards from "./VoiceCards";
+import { Suspense } from "react";
+
+import VoiceCards from "../VoiceCards";
+import Filter from "../VoicePageFilter";
 
 const Page = (): JSX.Element => (
   <div className="h-full w-full">
-    <Filter />
+    <Suspense>
+      <Filter />
 
-    <VoiceCards />
+      <VoiceCards />
+    </Suspense>
   </div>
 );
 
