@@ -53,17 +53,3 @@ const UserBlock = (): JSX.Element => (
 );
 
 export default UserBlock;
-
-<Tooltip>
-  <TooltipTrigger>
-    <div className="flex space-x-0.5 text-xs">
-      <span>95</span>
-      <Ticket height={15} width={15} />
-    </div>
-  </TooltipTrigger>
-
-  <TooltipContent>
-    <p>You have 95 passes</p>
-    <TooltipArrow className="fill-foreground" />
-  </TooltipContent>
-</Tooltip>;
