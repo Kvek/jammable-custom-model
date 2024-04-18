@@ -36,11 +36,11 @@ export const FileUpload = (): JSX.Element => {
     <div className="flex h-full w-full flex-col items-center justify-center">
       <div
         className={cn(
-          "flex h-full w-full flex-col items-center rounded-primary max-md:space-y-4 md:h-[45dvh] md:max-w-[85vw] md:flex-row md:justify-center md:space-x-4",
+          "flex h-full w-full flex-col items-center rounded-primary max-md:space-y-4 md:h-[45dvh] md:max-w-[65vw] md:flex-row md:justify-center md:space-x-4",
         )}>
         <div
           className={cn(
-            "h-full w-full transition-[max-height] duration-500 md:min-w-[45vw]",
+            "h-full transition-[max-height] duration-500 max-sm:w-full md:w-[45vw]",
             files.length ? "max-sm:max-h-[20dvh]" : "max-sm:max-h-full",
           )}>
           <div

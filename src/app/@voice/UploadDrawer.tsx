@@ -80,7 +80,7 @@ const UploadDrawer = ({ children }: { children: ReactNode }): JSX.Element => {
       </Drawer>
 
       <AlertDialog open={showDiscardModal}>
-        <AlertDialogContent>
+        <AlertDialogContent className="p-4">
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>This will discard your uploaded voice data.</AlertDialogDescription>
