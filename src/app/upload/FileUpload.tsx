@@ -4,6 +4,7 @@ import { Trash2Icon } from "lucide-react";
 import Image from "next/image";
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { v4 as uuidv4 } from "uuid";
 
 import { updateStepsState } from "@redux/steps/slice";
 import { useAppDispatch } from "@redux/store";
@@ -18,7 +19,8 @@ export const FileUpload = (): JSX.Element => {
   const [files, setFiles] = useState<Array<{ name: string; key: string; type: string }>>([]);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFiles(acceptedFiles.map(({ name, type }) => ({ key: name.concat("-").concat(type), name, type })));
+    setFiles((f) => [...f, ...acceptedFiles.map(({ name, type }) => ({ key: uuidv4(), name, type }))]);
+
     dispatch(updateStepsState({ complete: true, title: "upload" }));
   }, []);
 
@@ -28,8 +30,12 @@ export const FileUpload = (): JSX.Element => {
   });
 
   const deleteVoiceHandler = (fKey: string): void => {
-    setFiles((files) => files.filter(({ key }) => key !== fKey));
-    dispatch(updateStepsState({ complete: false, title: "upload" }));
+    setFiles((files) => {
+      const filteredFiles = files.filter(({ key }) => key !== fKey);
+      dispatch(updateStepsState({ complete: !!filteredFiles.length, title: "upload" }));
+
+      return filteredFiles;
+    });
   };
 
   return (

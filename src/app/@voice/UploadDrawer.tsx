@@ -60,17 +60,15 @@ const UploadDrawer = ({ children }: { children: ReactNode }): JSX.Element => {
       <Drawer modal dismissible={false} onClose={closeDrawerHandler} open={showDrawer}>
         <DrawerContent className="w-full p-2 md:min-w-[400px]">
           <DrawerHeader className="flex min-h-16 w-full flex-col items-end space-y-3">
-            {!allStepsComplete && (
-              <Button
-                aria-label="drawer close button"
-                className="h-8 w-8 rounded-full"
-                id="drawer-close-button"
-                onClick={onModalCloseHandler}
-                size={"icon"}
-                variant={"secondary"}>
-                <XIcon height={15} strokeWidth={2} width={15} />
-              </Button>
-            )}
+            <Button
+              aria-label="drawer close button"
+              className="h-8 w-8 rounded-full"
+              id="drawer-close-button"
+              onClick={onModalCloseHandler}
+              size={"icon"}
+              variant={"secondary"}>
+              <XIcon height={15} strokeWidth={2} width={15} />
+            </Button>
           </DrawerHeader>
           {children}
           <DrawerFooter>
