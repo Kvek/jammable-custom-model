@@ -35,7 +35,7 @@ const Filter: FC = () => {
   const viewQ = searchParams.get("view");
 
   const [filters, setFilters] = useState<FilterType>({
-    all: !!Number(AllQ),
+    all: !!Number(AllQ) || true,
     saved: !!Number(savedQ),
     search: searchQ ?? "",
     sort: sortQ === "name" || sortQ === "date" ? sortQ : "name",
